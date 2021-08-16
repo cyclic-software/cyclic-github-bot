@@ -11,6 +11,7 @@
     "github",
     "probot-app"
   ],
+  "main": "server.js",
   "scripts": {
     "start": "probot run ./index.js",
     "test": "jest"
