@@ -18,11 +18,9 @@ module.exports = (app) => {
     console.log(JSON.stringify(context, null, 2))
 
     // Send the notification
-    (async () => {
-      await webhook.send({
-        text: 'An issue has been opened.',
-      });
-    })();
+    await webhook.send({
+        text: `Issue opened: ${context.issue.html_url}`,
+    });
 
     const issueComment = context.issue({
       body: "Thanks for opening this issue!",
