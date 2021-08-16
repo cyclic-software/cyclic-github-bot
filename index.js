@@ -19,7 +19,7 @@ module.exports = (app) => {
 
     // Send the notification
     await webhook.send({
-        text: `Issue opened: ${context.issue.html_url}`,
+        text: `Issue opened: ${context.payload.issue.html_url}`,
     });
 
     const issueComment = context.issue({
