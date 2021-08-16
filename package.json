@@ -17,6 +17,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@slack/webhook": "^6.0.0",
+    "dotenv": "^8.6.0",
     "probot": "^11.0.1"
   },
   "devDependencies": {
