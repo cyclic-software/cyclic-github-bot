@@ -23,7 +23,7 @@ module.exports = (app) => {
     });
 
     const issueComment = context.issue({
-      body: "Thanks for opening this issue!",
+      body: "Thanks for opening this issue. It has been logged in our internal slack.",
     });
     return context.octokit.issues.createComment(issueComment);
   });
