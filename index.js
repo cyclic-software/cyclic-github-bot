@@ -7,16 +7,16 @@ const webhook = new IncomingWebhook(url);
 module.exports = (app) => {
   app.log.info("App was loaded");
 
-  app.on("issues.opened", async (context) => {
+  app.on("issues.closed", async (context) => {
 
     console.log(JSON.stringify(context, null, 2))
 
     await webhook.send({
-        text: `Issue opened: ${context.payload.issue.html_url}`,
+        text: `Issue closed: ${context.payload.issue.html_url}`,
     });
 
     const issueComment = context.issue({
-      body: "Thanks for opening this issue. It has been logged in our internal slack.",
+      body: "Thanks for closing this issue. Please come again!",
     });
     return context.octokit.issues.createComment(issueComment);
   });
